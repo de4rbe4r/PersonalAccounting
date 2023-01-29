@@ -1,0 +1,89 @@
+﻿<Window x:Class="PersonalAccounting.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PersonalAccounting"
+        xmlns:vm="clr-namespace:PersonalAccounting.ViewModel"
+        
+        mc:Ignorable="d"
+        Title="Личная бухгалтерия" Height="650" Width="1000" 
+        Icon="/money.png" WindowStartupLocation="CenterScreen"
+        Background="#FFFFB06D" WindowStyle="SingleBorderWindow" ResizeMode="CanMinimize" >
+    <Window.DataContext>
+        <vm:MainViewModel/>
+    </Window.DataContext>
+    
+    <Window.Resources>
+        <ControlTemplate x:Key="MenuButtons" TargetType="Button">
+            <Grid Name="Btn" Height="40" Margin="0,0,0,0" Background="#FFDE9253">
+                <Border BorderBrush="#FFF7DBC4" BorderThickness="1">
+                    <Grid>
+                        <Label Content="{TemplateBinding Content}"
+                               Background="Transparent" FontSize="14"
+                               VerticalAlignment="Center">
+                            <Label.Style>
+                                <Style TargetType="Label">
+                                    <Setter Property="Foreground" Value="Black"></Setter>
+                                    <Setter Property="FontFamily" Value="Trebuchet ms"></Setter>
+                                    <Style.Triggers>
+                                        <!-- Смена цвета при наведении -->
+                                        <DataTrigger Binding="{Binding Path=IsMouseOver, ElementName=Btn}" Value="True">
+                                            <Setter Property="Foreground" Value="LightGray"></Setter>
+                                        </DataTrigger>
+                                        <!-- Смена цвета при нажатии -->
+                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource
+                                            Mode=FindAncestor,
+                                            AncestorType={x:Type Button}},
+                                            Path = IsPressed}" Value="True">
+                                            <Setter Property="Foreground" Value="White"/> 
+                                        </DataTrigger>
+                                        <!-- Смена цвета при фокусировки (нажали на эту кнопку и отпустили ЛКМ) -->
+                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource
+                                            Mode=FindAncestor,
+                                            AncestorType={x:Type Button}},
+                                            Path = IsFocused}" Value="True">
+                                            <Setter Property="Foreground" Value="AntiqueWhite"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Label.Style>
+                        </Label>
+                    </Grid>
+                    <Border.Style>
+                        <Style TargetType="Border">
+                            <Style.Triggers>
+                                <!-- Эффект нажатия на кнопку. Текст немого сдивагается вниз -->
+                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource
+                                            Mode=FindAncestor,
+                                            AncestorType={x:Type Button}},
+                                            Path = IsPressed}" Value="True">
+                                    <Setter Property="Padding" Value="0,4,0,0"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style>
+                </Border>
+            </Grid>
+        </ControlTemplate>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40">
+            </RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Frame Grid.Row="1" NavigationUIVisibility="Hidden" Content="{Binding CurrentPage}"></Frame>
+        <Grid Name="Menu" Grid.Row="0" Background="#FF9A551B">
+            <StackPanel Orientation="Horizontal">
+                <Button Template="{StaticResource ResourceKey=MenuButtons}" Content="Расходы за день" Command="{Binding OpenDayPage}" Name="btnDayExpenses"></Button>
+                <Button Template="{StaticResource ResourceKey=MenuButtons}" Content="Статистика за месяц" Command="{Binding OpenMonthPage}"></Button>
+                <Button Template="{StaticResource ResourceKey=MenuButtons}" Content="Статистика за период" Command="{Binding OpenPeriodPage}"></Button>
+                <Button Template="{StaticResource ResourceKey=MenuButtons}" Content="Настройки" Command="{Binding OpenSettingsPage}"></Button>
+            </StackPanel>
+        </Grid>
+
+        
+    </Grid>
+</Window>
