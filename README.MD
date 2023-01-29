@@ -14,7 +14,7 @@
 ---
 
 <div align="center"><img src="https://github.com/de4rbe4r/PersonalAccounting/blob/master/Images/1.PNG" width="700"/></div>
-<div align="center"><img src="https://github.com/de4rbe4r/PersonalAccounting/blob/master/Images/2.PNG" width="200"/></div>
+<div align="center"><img src="https://github.com/de4rbe4r/PersonalAccounting/blob/master/Images/2.png" width="200"/></div>
 <div align="center"><img src="https://github.com/de4rbe4r/PersonalAccounting/blob/master/Images/3.PNG" width="700"/></div>
 <div align="center"><img src="https://github.com/de4rbe4r/PersonalAccounting/blob/master/Images/4.PNG" width="700"/></div>
-<div align="center"><img src="https://github.com/de4rbe4r/PersonalAccounting/blob/master/Images/5.PNG" width="700"/></div>
+<div align="center"><img src="https://github.com/de4rbe4r/PersonalAccounting/blob/master/Images/5.png" width="700"/></div>
