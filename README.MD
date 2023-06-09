@@ -22,7 +22,7 @@ On the "Настройки" tab, an expense plan is set (when you click on the "
 </br></br>
 <div align="center"><img src="https://github.com/de4rbe4r/PersonalAccounting/blob/master/Images/5.png" width="700"/></div>
 </br>
-
+---
 #### Language and tools:
 * C#
 * Visual Studio
@@ -32,4 +32,4 @@ On the "Настройки" tab, an expense plan is set (when you click on the "
 * WPF
 * XAML
 * MVVM 
----
+
