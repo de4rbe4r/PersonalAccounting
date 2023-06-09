@@ -17,6 +17,7 @@ The "Расходы за месяц" tab displays all expenses for the current m
 The "Расходы за период" tab is similar to the "Расходы за месяц" tab, the only difference is that here you need to specify the period for the withdrawal of expenses
 </br></br>
 <div align="center"><img src="https://github.com/de4rbe4r/PersonalAccounting/blob/master/Images/4.PNG" width="700"/></div>
+</br>
 On the "Настройки" tab, an expense plan is set (when you click on the "Изменить план" button, you enter the amount of the plan until the end of the month, and the daily plan is calculated automatically and vice versa) and edit/delete categories
 </br></br>
 <div align="center"><img src="https://github.com/de4rbe4r/PersonalAccounting/blob/master/Images/5.png" width="700"/></div>
